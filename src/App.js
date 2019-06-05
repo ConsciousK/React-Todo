@@ -28,7 +28,8 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        TodoList
+        <TodoList todos={this.state.todos}/>
+        <TodoForm />
       </div>
     );
   }
