@@ -36,10 +36,23 @@ class App extends React.Component {
     });
   };
 
+  todoCompleted = id => {
+    let todos = this.state.todos.slice();
+    todos = todos.map(todo => {
+      if (todo.id === id) {
+        todo.completed = !todo.completed;
+        return todo;
+      } else {
+        return todo;
+      }
+    });
+    this.setState({ todos });
+  };
+
   render() {
     return (
       <div>
-        <TodoList todos={this.state.todos}/>
+        <TodoList todos={this.state.todos} todoCompleted={this.todoCompleted}/>
         <TodoForm value={this.state.todo} addTodo={this.addTodoHandler} todoChange={this.changeTodo} />
       </div>
     );

@@ -7,7 +7,7 @@ const TodoForm = props => {
         type="text"
         name="todo"
         value={props.value}
-        placeholder="...todo"
+        placeholder="Type Your Todo Here..."
       />
       <button onClick={props.addTodo}>Add Todo</button>
       <button onClick={props.clearTodos}>Clear Completed</button>
