@@ -1,8 +1,8 @@
 import React from 'react';
-
+import "./Todo.css"
 const Todo = props => {
   return (
-    <div onClick={() => props.todoCompleted(props.todo.id)} style={props.todo.completed ? { textDecoration: 'line-through' } : null}>
+    <div className="todoItem" onClick={() => props.todoCompleted(props.todo.id)} style={props.todo.completed ? { textDecoration: 'line-through' } : null}>
       {props.todo.task}
     </div>
   );
