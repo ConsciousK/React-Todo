@@ -29,11 +29,15 @@ class App extends React.Component {
 
   addTodoHandler = event => {
     event.preventDefault();
-    const newTodo = { task: this.state.todo, completed: false, id: Date.now() };
-    this.setState({ 
-      todos: [...this.state.todos, newTodo], 
-      todo: '' 
-    });
+    if (this.state.todo === '' ) {
+      return;
+    } else {
+      const newTodo = { task: this.state.todo, completed: false, id: Date.now() };
+      this.setState({ 
+        todos: [...this.state.todos, newTodo], 
+        todo: '' 
+      });
+    }
   };
 
   todoCompleted = id => {
