@@ -19,7 +19,7 @@ class App extends React.Component {
   addTodoHandler = event => {
     event.preventDefault();
     if (this.state.todo === '' ) {
-      return;
+      return alert('Must Input a Todo Task in the Input field.');
     } else {
       const newTodo = { task: this.state.todo, completed: false, id: Date.now() };
       this.setState({ 
@@ -39,7 +39,7 @@ class App extends React.Component {
         return todo;
       }
     });
-    
+
     this.setState({ todos });
   };
 
